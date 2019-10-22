@@ -195,3 +195,5 @@
 /Users/anson.jiang/Documents/Projects/Billboard API/obj/Debug/netcoreapp3.0/BillboardAPI.csproj.CopyComplete
 /Users/anson.jiang/Documents/Projects/Billboard API/obj/Debug/netcoreapp3.0/BillboardAPI.dll
 /Users/anson.jiang/Documents/Projects/Billboard API/obj/Debug/netcoreapp3.0/BillboardAPI.pdb
+/Users/anson.jiang/Documents/Projects/Billboard API/bin/Debug/netcoreapp3.0/Fizzler.dll
+/Users/anson.jiang/Documents/Projects/Billboard API/bin/Debug/netcoreapp3.0/Fizzler.Systems.HtmlAgilityPack.dll

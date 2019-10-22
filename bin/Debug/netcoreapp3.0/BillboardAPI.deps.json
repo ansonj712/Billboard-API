@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.0": {
       "BillboardAPI/1.0.0": {
         "dependencies": {
+          "Fizzler.Systems.HtmlAgilityPack": "1.2.0",
           "Flurl": "2.8.2",
           "HtmlAgilityPack": "1.11.16",
           "Microsoft.EntityFrameworkCore.Design": "3.0.0",
@@ -316,6 +317,33 @@
         },
         "compile": {
           "BillboardAPI.dll": {}
+        }
+      },
+      "Fizzler/1.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Fizzler.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Fizzler.dll": {}
+        }
+      },
+      "Fizzler.Systems.HtmlAgilityPack/1.2.0": {
+        "dependencies": {
+          "Fizzler": "1.2.0",
+          "HtmlAgilityPack": "1.11.16",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Fizzler.Systems.HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Fizzler.Systems.HtmlAgilityPack.dll": {}
         }
       },
       "Flurl/2.8.2": {
@@ -3408,6 +3436,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Fizzler/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CPxuWF8EPvM0rwAtMTR5G+7EuLoGNXsEfqyx06upN9JyVALZ73KgbGn3SLFwGosifiUAXrvNHtXlUwGGytdECg==",
+      "path": "fizzler/1.2.0",
+      "hashPath": "fizzler.1.2.0.nupkg.sha512"
+    },
+    "Fizzler.Systems.HtmlAgilityPack/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nKGdz8dEkZbEkfOPCRCxYhJhYzStZeYV7EtD5L6m1G6Qr2CawDgPTOFB2+hIU1wHwtI4tTVaYA0XfDCuBqDq3Q==",
+      "path": "fizzler.systems.htmlagilitypack/1.2.0",
+      "hashPath": "fizzler.systems.htmlagilitypack.1.2.0.nupkg.sha512"
     },
     "Flurl/2.8.2": {
       "type": "package",
