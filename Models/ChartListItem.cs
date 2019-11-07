@@ -1,4 +1,4 @@
-namespace BillboardsAPI.Models
+namespace BillboardAPI.Models
 {
     public class ChartListItem
     {
