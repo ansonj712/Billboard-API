@@ -30,18 +30,13 @@ namespace BillboardAPI.Repository
         public static List<ChartListItem> GetChart(string name, string date)
         {
             List<ChartListItem> chart = new List<ChartListItem>();
-
-            HtmlDocument doc = new HtmlDocument();
-            HtmlWeb web = new HtmlWeb();
-            List<HtmlNode> chartListItemNodes = new List<HtmlNode>();
-
             string url = Flurl.Url.Combine("https://www.billboard.com/charts", name, date);
 
+            HtmlWeb web = new HtmlWeb();
+            HtmlDocument doc = web.Load(url);
             web.OverrideEncoding = Encoding.UTF8;
 
-            doc = web.Load(url);
-
-            chartListItemNodes = doc.DocumentNode.QuerySelectorAll(ChartListItemSelector).ToList();
+            List<HtmlNode> chartListItemNodes = doc.DocumentNode.QuerySelectorAll(ChartListItemSelector).ToList();
 
             if(chartListItemNodes.Count == 0) 
             {
@@ -52,12 +47,12 @@ namespace BillboardAPI.Repository
             {
                 ChartListItem chartListItem = new ChartListItem();
 
-                string rank = string.Empty;
-                string song = string.Empty;
-                string artist = string.Empty;
-                string lastWeek = string.Empty;
-                string peak = string.Empty;
-                string duration = string.Empty;
+                string rank;
+                string song;
+                string artist;
+                string lastWeek;
+                string peak;
+                string duration;
 
                 try 
                 {
