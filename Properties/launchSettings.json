@@ -6,10 +6,11 @@
   "profiles": {
     "BillboardAPI": {
       "commandName": "Project",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
+      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5001"
     }
   }
