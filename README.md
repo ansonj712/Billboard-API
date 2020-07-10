@@ -8,7 +8,7 @@ A simple Web API project for Billboard charts
 1. Open Visual Studio
 2. Restore NuGet Packages
 3. Run project - Homepage with Swagger UI will automatically pop up, or
-4. Navigate to http://localhost:5001
+4. Navigate to http://localhost:5001/swagger/index.html
 
 ## How to Use
 
@@ -28,7 +28,7 @@ http://localhost:5001/api/charts/{name}/{date}
 - country-songs
 
 ### Postman
-TBD
+![](postman.gif)
 
-### Swagger UI
-TBD
+### Swagger
+![](swagger.gif)
