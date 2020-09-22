@@ -29,6 +29,3 @@ http://localhost:5001/api/charts/{name}/{date}
 
 ### Postman
 ![](postman.gif)
-
-### Swagger
-![](swagger.gif)

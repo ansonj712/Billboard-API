@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using BillboardAPI.Models;
 using BillboardAPI.Repository;
+using Microsoft.AspNetCore.Cors;
 
 namespace BillboardAPI.Controllers
 {
