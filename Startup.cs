@@ -22,7 +22,15 @@ namespace BillboardAPI
             services.AddControllers();
 
             services.AddSpaStaticFiles(configuration => {
-             configuration.RootPath = "client";
+                configuration.RootPath = "client";
+            });
+
+            services.AddSwaggerDocument(config => {
+                config.PostProcess = document => {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "Billboard API";
+                    document.Info.Description = "A simple web API for billboard charts";
+                };
             });
         }
 
@@ -35,10 +43,10 @@ namespace BillboardAPI
             }
 
             app.UseCors(
-               options => options.SetIsOriginAllowed(x => _ = true).AllowAnyMethod().AllowAnyHeader().AllowCredentials()
+                options => options.SetIsOriginAllowed(x => _ = true).AllowAnyMethod().AllowAnyHeader().AllowCredentials()
             );
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
 
@@ -49,6 +57,9 @@ namespace BillboardAPI
             {
                 endpoints.MapControllers();
             });
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }
