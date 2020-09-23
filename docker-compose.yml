@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  server:
+    build: .
+    volumes: 
+      - /app
+    ports:
+      - 5001:80
+
+  client:
+    build: ./client
+    volumes:
+      - /app/client
+    ports:
+      - 4200:4200
+    depends_on:
+      - server
