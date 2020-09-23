@@ -1,1 +1,33 @@
-<p>charts works!</p>
+<div class="container">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs justify-content-center">
+    <li *ngFor="let genre of genres" [ngbNavItem]="genre">
+      <a ngbNavLink>{{genre.name}}</a>
+      <ng-template ngbNavContent>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Song</th>
+              <th scope="col">Artist</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Last Week</th>
+              <th scope="col">Peak</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let chartItem of d[genre.name]">
+              <td>{{chartItem.rank}}</td>
+              <td>{{chartItem.song}}</td>
+              <td>{{chartItem.artist}}</td>
+              <td>{{chartItem.duration}}</td>
+              <td>{{chartItem.lastWeek}}</td>
+              <td>{{chartItem.peak}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>
