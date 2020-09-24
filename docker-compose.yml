@@ -2,16 +2,21 @@ version: '3.7'
 
 services:
   server:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     volumes: 
       - /app
     ports:
       - 5001:80
 
   client:
-    build: ./client
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
     volumes:
-      - /app/client
+      - /client/node_modules
+      - ./client:/app/client
     ports:
       - 4200:4200
     depends_on:

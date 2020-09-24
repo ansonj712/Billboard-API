@@ -20,4 +20,4 @@ RUN npm install -g @angular/cli@7.3.9
 # add app
 COPY . /app/client
 
-CMD ["ng","serve", "--disableHostCheck", "--host", "0.0.0.0"]
+CMD ["ng","serve", "--disableHostCheck", "--host", "0.0.0.0", "--poll", "2000"]
