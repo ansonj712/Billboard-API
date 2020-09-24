@@ -14,7 +14,7 @@ import { DefaultUrlSerializer } from '@angular/router';
 export class ChartsComponent implements OnInit {
   d = {}
   genres = [];
-  public isMenuCollapsed = true;
+  isLoading = true;
 
   constructor(private chartsService: ChartsService) { }
 
@@ -70,7 +70,8 @@ export class ChartsComponent implements OnInit {
   getCharts(genre): void {
     this.chartsService.getCharts(genre.path)
       .subscribe(chart => {
-        this.d[genre.name] = chart
+        this.d[genre.name] = chart;
+        this.isLoading = false;
       });
   }
 }
