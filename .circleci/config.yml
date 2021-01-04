@@ -10,15 +10,7 @@ jobs:
       - image: circleci/node:12.18.4-browsers
     steps:
       - checkout
-      - run: cd client
-      - restore_cache:
-          key: AngularCircleCI-{{ .Branch }}-{{ checksum "package.json" }}
-      - run: npm install
-      - save_cache:
-          key: AngularCircleCI-{{ .Branch }}-{{ checksum "package.json" }}
-          paths:
-            - "node_modules" 
-      - run: npm run build
+      - run: cd client && yarn install && yarn run build
   build-server:
     working_directory: /app
     executor: win/default
