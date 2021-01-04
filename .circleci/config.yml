@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+
+jobs:
+  build-client:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:12.18.4-browsers
+    steps:
+      - checkout
+      - run: cd client && yarn install && yarn run build
+  build-server:
+    working_directory: /app
+    executor: win/default
+    steps:
+      - checkout
+      - run: dotnet restore
+      - run: dotnet build
+workflows:
+  build_and_test:
+    jobs:
+      - build-client
+      - build-server
